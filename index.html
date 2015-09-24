@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.2.4/mootools-yui-compressed.js"></script>
+
+	<style>
+	.myButton {
+		-moz-box-shadow: 0px 1px 0px 0px #1c1b18;
+		-webkit-box-shadow: 0px 1px 0px 0px #1c1b18;
+		box-shadow: 0px 1px 0px 0px #1c1b18;
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #eae0c2), color-stop(1, #ccc2a6));
+		background:-moz-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+		background:-webkit-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+		background:-o-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+		background:-ms-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
+		background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eae0c2', endColorstr='#ccc2a6',GradientType=0);
+		background-color:#eae0c2;
+		-moz-border-radius:15px;
+		-webkit-border-radius:15px;
+		border-radius:15px;
+		border:2px solid #333029;
+		display:inline-block;
+		cursor:pointer;
+		color:#505739;
+		font-family:Arial;
+		font-size:14px;
+		font-weight:bold;
+		padding:12px 16px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #ffffff;
+	}
+	.myButton:hover {
+		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ccc2a6), color-stop(1, #eae0c2));
+		background:-moz-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+		background:-webkit-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+		background:-o-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+		background:-ms-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
+		background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc2a6', endColorstr='#eae0c2',GradientType=0);
+		background-color:#ccc2a6;
+	}
+	.myButton:active {
+		position:relative;
+		top:1px;
+	}
+* {
+padding:0px;
+margin:0px;
+}
+
+div.nxc-message-stack {
+position:fixed;
+top:0px;
+right:0px;
+width:250px;
+margin: 10px 40px 0px 0px;
+}
+
+div.nxc-message-error,
+div.nxc-message-warning,
+div.nxc-message-notice {
+margin:15px 5px 5px 5px;
+text-align:justify;
+position:relative;
+}
+
+a.nxc-message-close-button {
+position:absolute;
+top:0;
+right:0;
+width:30px;
+height:30px;
+display:block;
+background-image: url('../images/close.png');
+margin: -15px -15px 0px 0px;
+}
+
+
+div.nxc-message-error {
+background-color:#F9D2D2;
+border:3px solid #FF2A2A;
+padding:5px;
+color:#FF2A00;
+}
+
+div.nxc-message-warning {
+background-color:#FDE6B5;
+border:3px solid #FFAA00;
+padding:5px;
+color:#FF7F00;
+}
+
+div.nxc-message-notice {
+background-color:#DAF8DA;
+border:3px solid #146D14;
+padding:5px;
+color:#0F530F;
+}
+</style>
+<script type="text/javascript" src="NXC.MessageStack.js"></script>
+<script type="text/javascript" src="NXC.NotifyMessage.js"></script>
+</head>
+<body>
+<img src="http://karlwhitney.com/dumbriffs/wp-content/uploads/2010/06/tytell.jpg">
+<br>
+<br>
+<div>
+    <a href="#" id="refactor-button"class="myButton">Start to refactor mr L.E. Gacy</a>
+    <a href="#" id="crap-button"class="myButton">Create more crap make mr L.E. Gacy Happy</a>
+</div>
+<script type="text/javascript">
+document.id('refactor-button').addEvent('click', function () {
+    var messageStack = new NXC.MessageStack(); 
+    messageStack.showMessage( 
+        'Eat craponium and die you will not do so', 
+        'error', 
+        { 'hideTimeout': 3000 } 
+    ); 
+});
+
+document.id('crap-button').addEvent('click', function () {
+    var messageStack = new NXC.MessageStack(); 
+    messageStack.showMessage( 
+        'Good boy now go tell your boss you have made good product', 
+        'notice', 
+        { 'hideTimeout': 3000 } 
+    ); 
+});
+</script>
+</body>
+</html>
